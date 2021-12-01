@@ -13,3 +13,7 @@ func _ready():
 
 func _on_ButtonEnd_button_up():
 	get_tree().quit()
+
+# TODO: automate day buttons?
+func _on_ButtonDay1_button_up():
+	get_tree().change_scene("res://Scenes/Day1.tscn")

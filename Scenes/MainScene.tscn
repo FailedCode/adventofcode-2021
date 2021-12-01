@@ -23,4 +23,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ButtonDay1" type="Button" parent="HUD"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 192.0
+margin_bottom = 192.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="button_up" from="HUD/ButtonEnd" to="." method="_on_ButtonEnd_button_up"]
+[connection signal="button_up" from="HUD/ButtonDay1" to="." method="_on_ButtonDay1_button_up"]
