@@ -15,10 +15,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Part2" type="Button" parent="."]
+margin_left = 208.0
+margin_top = 448.0
+margin_right = 336.0
+margin_bottom = 512.0
+text = "Part 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Part1Result" type="LineEdit" parent="."]
 margin_left = 64.0
 margin_top = 520.0
 margin_right = 192.0
+margin_bottom = 576.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Part2Result" type="LineEdit" parent="."]
+margin_left = 208.0
+margin_top = 520.0
+margin_right = 336.0
 margin_bottom = 576.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -34,3 +53,4 @@ __meta__ = {
 }
 
 [connection signal="button_up" from="Part1" to="." method="_on_Part1_button_up"]
+[connection signal="button_up" from="Part2" to="." method="_on_Part2_button_up"]
