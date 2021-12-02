@@ -52,5 +52,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="back" type="Button" parent="."]
+margin_left = 952.0
+margin_top = 560.0
+margin_right = 993.0
+margin_bottom = 580.0
+text = "back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="button_up" from="Part1" to="." method="_on_Part1_button_up"]
 [connection signal="button_up" from="Part2" to="." method="_on_Part2_button_up"]
+[connection signal="button_up" from="back" to="." method="_on_back_button_up"]

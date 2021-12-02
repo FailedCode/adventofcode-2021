@@ -44,3 +44,7 @@ func calculatePart2():
 		prevB += 1
 	var increases = diffNumbers(sums)
 	return String(increases)
+
+
+func _on_back_button_up():
+	get_tree().change_scene("res://Scenes/MainScene.tscn")
