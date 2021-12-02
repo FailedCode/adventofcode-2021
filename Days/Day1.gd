@@ -1,13 +1,4 @@
-extends Node2D
-
-var puzzleInput
-var part1ResultLabel
-var part2ResultLabel
-
-func _ready():
-	part1ResultLabel = find_node("Part1Result")
-	part2ResultLabel = find_node("Part2Result")
-	puzzleInput = find_node("PuzzleInput")
+extends "res://Days/AbstractDay.gd"
 
 func _on_Part1_button_up():
 	var result = calculatePart1()
@@ -45,6 +36,3 @@ func calculatePart2():
 	var increases = diffNumbers(sums)
 	return String(increases)
 
-
-func _on_back_button_up():
-	get_tree().change_scene("res://Scenes/MainScene.tscn")

@@ -30,4 +30,7 @@ func _on_ButtonEnd_button_up():
 	get_tree().quit()
 
 func _on_day_button_pressed(day):
-	get_tree().change_scene("res://Scenes/Day" + day + ".tscn")
+	print("switch to day " + day)
+	var script = "res://Days/Day" + day + ".gd"
+	var scene = "res://Scenes/Day.tscn"
+	Utility.change_scene({"script": script, "scene": scene})
