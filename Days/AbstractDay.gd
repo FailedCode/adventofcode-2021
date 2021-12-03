@@ -29,3 +29,7 @@ func calculatePart1() -> String:
 
 func calculatePart2() -> String:
 	return "not implemented yet"
+
+func getInputAsLines() -> Array:
+	var lines = puzzleInput.text.split("\n", false)
+	return lines
