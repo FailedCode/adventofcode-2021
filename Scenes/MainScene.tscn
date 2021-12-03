@@ -13,12 +13,11 @@ __meta__ = {
 }
 
 [node name="ButtonEnd" type="Button" parent="HUD"]
-margin_left = 968.0
-margin_top = 564.0
-margin_right = 1008.0
-margin_bottom = 584.0
+margin_left = 952.0
+margin_top = 560.0
+margin_right = 1016.0
+margin_bottom = 592.0
 text = "Quit"
-align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

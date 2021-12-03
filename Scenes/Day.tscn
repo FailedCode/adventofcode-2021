@@ -52,8 +52,8 @@ __meta__ = {
 [node name="back" type="Button" parent="."]
 margin_left = 952.0
 margin_top = 560.0
-margin_right = 993.0
-margin_bottom = 580.0
+margin_right = 1016.0
+margin_bottom = 592.0
 text = "back"
 __meta__ = {
 "_edit_use_anchors_": false
