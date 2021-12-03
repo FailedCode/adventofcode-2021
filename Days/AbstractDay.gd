@@ -15,5 +15,17 @@ func _ready():
 	var back = find_node("back")
 	back.connect("button_up", self, "_on_back_button_up")
 
+func _on_Part1_button_up():
+	part1ResultLabel.text = calculatePart1()
+
+func _on_Part2_button_up():
+	part2ResultLabel.text = calculatePart2()
+	
 func _on_back_button_up():
 	Utility.change_scene({"scene": "res://Scenes/MainScene.tscn"})
+
+func calculatePart1():
+	return "not implemented yet"
+
+func calculatePart2():
+	return "not implemented yet"
