@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "AbstractDay",
+"language": "GDScript",
+"path": "res://Days/AbstractDay.gd"
+} ]
+_global_script_class_icons={
+"AbstractDay": ""
+}
+
 [application]
 
 config/name="adventofcode-2021"

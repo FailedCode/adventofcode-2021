@@ -1,4 +1,4 @@
-extends "res://Days/AbstractDay.gd"
+extends AbstractDay
 
 
 func calculatePart1():
