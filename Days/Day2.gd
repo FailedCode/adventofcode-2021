@@ -17,6 +17,23 @@ func calculatePart1() -> String:
 	
 	return x * y
 
+func calculatePart2() -> String:
+	var commands = getInputAsCommands()
+	var x = 0
+	var y = 0
+	var aim = 0
+	
+	for command in commands:
+		match command["dir"]:
+			"up":
+				aim -= command["val"]
+			"down":
+				aim += command["val"]
+			"forward":
+				x += command["val"]
+				y += command["val"] * aim
+
+	return x * y
 
 func getInputAsCommands() -> Array:
 	var commands = [];
