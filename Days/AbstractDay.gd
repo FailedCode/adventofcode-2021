@@ -6,6 +6,7 @@ var part1ResultLabel
 var part2ResultLabel
 
 func _ready() -> void:
+	find_node("Title").text = getTitle()
 	part1ResultLabel = find_node("Part1Result")
 	part2ResultLabel = find_node("Part2Result")
 	puzzleInput = find_node("PuzzleInput")
@@ -14,6 +15,9 @@ func _ready() -> void:
 	find_node("Part2").connect("button_up", self, "_on_Part2_button_up")
 	var back = find_node("back")
 	back.connect("button_up", self, "_on_back_button_up")
+	
+func getTitle() -> String:
+	return "not implemented yet"
 
 func _on_Part1_button_up() -> void:
 	part1ResultLabel.text = String(calculatePart1())

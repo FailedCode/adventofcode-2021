@@ -1,5 +1,7 @@
 extends AbstractDay
 
+func getTitle() -> String:
+	return "Day 1: Sonar Sweep"
 
 func calculatePart1():
 	var inputText = puzzleInput.text

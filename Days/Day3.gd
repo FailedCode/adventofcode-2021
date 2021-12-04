@@ -1,5 +1,8 @@
 extends AbstractDay
 
+func getTitle() -> String:
+	return "Day 3: Binary Diagnostic"
+
 func calculatePart1():
 	var lines = getInputAsLines()
 	var majority = (lines.size() / 2) + 1

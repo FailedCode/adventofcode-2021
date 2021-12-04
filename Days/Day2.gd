@@ -1,5 +1,7 @@
 extends AbstractDay
 
+func getTitle() -> String:
+	return "Day 2: Dive!"
 
 func calculatePart1() -> String:
 	var commands = getInputAsCommands()

@@ -36,5 +36,7 @@ func _on_ButtonEnd_button_up():
 func _on_day_button_pressed(day):
 	print("switch to day " + day)
 	var script = "res://Days/Day" + day + ".gd"
+	if !File.new().file_exists(script):
+		script = "res://Days/AbstractDay.gd"
 	var scene = "res://Scenes/Day.tscn"
 	Utility.change_scene({"script": script, "scene": scene})
