@@ -19,10 +19,11 @@ func _ready():
 		button.rect_position = Vector2(
 			size + size * col + size * 0.5 * col,
 			size + size * row + size * 0.5 * row)
-		if day % 2 == 0:
-			button.set_modulate(Color(1, 0, 0, 1))
-		else:
-			button.set_modulate(Color(0, 1, 0, 1))
+		if File.new().file_exists("res://Days/Day" + String(day) + ".gd"):
+			if day % 2 == 0:
+				button.set_modulate(Color(1, 0, 0, 1))
+			else:
+				button.set_modulate(Color(0, 1, 0, 1))
 		button.connect("button_up", self, "_on_day_button_pressed", [String(day)])
 		add_child(button)
 		col += 1
