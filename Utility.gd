@@ -36,3 +36,10 @@ func string_reverse(string):
 	for i in range(string.length() - 1, -1, -1):
 		result += string[i]
 	return result
+
+func fill_array(size, value = 0, array = null) -> Array:
+	if array == null:
+		array = []
+	for i in size:
+		array.append(value)
+	return array
