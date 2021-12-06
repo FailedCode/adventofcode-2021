@@ -43,3 +43,9 @@ func fill_array(size, value = 0, array = null) -> Array:
 	for i in size:
 		array.append(value)
 	return array
+
+func array_sum(array) -> int:
+	var sum = 0
+	for i in array:
+		sum += i
+	return sum
