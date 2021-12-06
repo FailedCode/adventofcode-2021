@@ -10,12 +10,8 @@ func getInputNumbers():
 		numbers.append(int(n))
 	return numbers
 
-func calculatePart1():
-	var numbers = getInputNumbers()
-	var fishes = Utility.fill_array(9)
-	for n in numbers:
-		fishes[n] += 1
-	for i in range(0, 80):
+func simulateFishes(fishes, maxGeneration):
+	for i in range(0, maxGeneration):
 		var newFish = Utility.fill_array(9)
 		var newFishCount = fishes[0]
 		for p in range(8, 0, -1):
@@ -23,4 +19,20 @@ func calculatePart1():
 		newFish[8] = newFishCount
 		newFish[6] += newFishCount
 		fishes = newFish
+	return fishes
+
+func calculatePart1():
+	var numbers = getInputNumbers()
+	var fishes = Utility.fill_array(9)
+	for n in numbers:
+		fishes[n] += 1
+	fishes = simulateFishes(fishes, 80)
+	return Utility.array_sum(fishes)
+
+func calculatePart2():
+	var numbers = getInputNumbers()
+	var fishes = Utility.fill_array(9)
+	for n in numbers:
+		fishes[n] += 1
+	fishes = simulateFishes(fishes, 256)
 	return Utility.array_sum(fishes)
