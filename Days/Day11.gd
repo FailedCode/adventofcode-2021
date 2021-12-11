@@ -20,13 +20,23 @@ func calculatePart1():
 		flashes += calcOctopuses(octopuses)
 	return flashes
 
+func calculatePart2():
+	var octopuses = getInputArray()
+	var maxFlashes = octopuses.size() * octopuses[0].size()
+	var steps = 0
+	while true:
+		steps += 1
+		var flashes = calcOctopuses(octopuses)
+		if flashes == maxFlashes:
+			return steps
+
 func calcOctopuses(octopuses):
 	for row in range(0, octopuses.size()):
 		for col in range(0, octopuses[row].size()):
 			octopuses[row][col] += 1
 
 	var flashesSum = 0
-	while(true):
+	while true:
 		var flashes = calcFlashes(octopuses)
 		flashesSum += flashes
 		if flashes == 0:
