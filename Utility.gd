@@ -62,3 +62,9 @@ func regex_find(expression, subject):
 	var regex = RegEx.new()
 	regex.compile(expression)
 	return regex.search(subject)
+
+func log(text, args) -> void:
+	for i in range(0, args.size()):
+		text = text.replace("{" + String(i) + "}", String(args[i]))
+	print(text)
+	
