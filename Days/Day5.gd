@@ -31,6 +31,29 @@ func calculatePart1():
 				map[line["y1"]][i] += 1
 	return countMapOver2(map)
 
+func calculatePart2():
+	var lines = getInput()
+	var minMax = getMinMax(lines)
+	var map = Utility.fill_array2d(minMax["maxX"], minMax["maxY"])
+	for line in lines:
+		if line["x1"] == line["x2"]:
+			for i in range(min(line["y1"], line["y2"]), max(line["y1"], line["y2"]) + 1):
+				map[i][line["x1"]] += 1
+		elif line["y1"] == line["y2"]:
+			for i in range(min(line["x1"], line["x2"]), max(line["x1"], line["x2"]) + 1):
+				map[line["y1"]][i] += 1
+		else:
+			var xdiff = sign(line["x2"] - line["x1"])
+			var ydiff = sign(line["y2"] - line["y1"])
+			var x = line["x1"]
+			var y = line["y1"]
+			while(true):
+				map[y][x] += 1
+				if x == line["x2"] && y == line["y2"]: break
+				x += xdiff
+				y += ydiff
+	return countMapOver2(map)
+
 func getMinMax(lines):
 	var minMax = {
 		"minX": lines[0]["x1"],
