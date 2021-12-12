@@ -20,6 +20,7 @@ func getInput():
 		for r in rowRaw:
 			row.append({"value": int(r), "on": false})
 		currentField.append(row)
+	bingoFields.append(currentField)
 	return {"numbers": numbers, "fields": bingoFields}
 
 func calculatePart1():
@@ -32,6 +33,27 @@ func calculatePart1():
 			if markField(field, n):
 				if hasBingo(field):
 					return sumBingoScore(field) * n
+	return "no solution found"
+	
+func calculatePart2():
+	var tmp = getInput()
+	var numbers = tmp["numbers"]
+	var fields = tmp["fields"]
+	
+	for n in numbers:
+		var i = 0
+		var fieldsToRemove = []
+		for field in fields:
+			if markField(field, n):
+				if hasBingo(field):
+					fieldsToRemove.append(i)
+			i += 1
+			
+		fieldsToRemove.invert()
+		for f in fieldsToRemove:
+			var lastField = fields.pop_at(f)
+			if fields.size() == 0:
+				return sumBingoScore(lastField) * n
 	return "no solution found"
 
 func markField(field, n):
