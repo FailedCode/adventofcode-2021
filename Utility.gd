@@ -52,6 +52,15 @@ func fill_array(size, value = 0, array = null) -> Array:
 		array.append(value)
 	return array
 
+func fill_array2d(width, height, value = 0) -> Array:
+	var array = []
+	for y in range(0, height + 1):
+		var row = []
+		for x in range(0, width + 1):
+			row.append(value)
+		array.append(row)
+	return array
+
 func array_sum(array) -> int:
 	var sum = 0
 	for i in array:
