@@ -54,9 +54,9 @@ func fill_array(size, value = 0, array = null) -> Array:
 
 func fill_array2d(width, height, value = 0) -> Array:
 	var array = []
-	for _y in range(0, height + 1):
+	for _y in range(0, height):
 		var row = []
-		for _x in range(0, width + 1):
+		for _x in range(0, width):
 			row.append(value)
 		array.append(row)
 	return array

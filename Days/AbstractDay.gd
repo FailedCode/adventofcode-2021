@@ -40,9 +40,11 @@ func calculatePart2() -> String:
 	return "not implemented yet"
 
 func getInputAsLines() -> Array:
-	var lines = puzzleInput.text.split("\n", false)
-	return lines
+	return puzzleInput.text.split("\n", false)
 
+func getInputAsLinesRaw() -> Array:
+	return puzzleInput.text.split("\n")
+	
 func fetchInput():
 	var inputFile = File.new()
 	var path = "res://Input/day" + String(dayNumber) + ".txt"

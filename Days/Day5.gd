@@ -21,7 +21,7 @@ func getInput():
 func calculatePart1():
 	var lines = getInput()
 	var minMax = getMinMax(lines)
-	var map = Utility.fill_array2d(minMax["maxX"], minMax["maxY"])
+	var map = Utility.fill_array2d(minMax["maxX"]+1, minMax["maxY"]+1)
 	for line in lines:
 		if line["x1"] == line["x2"]:
 			for i in range(min(line["y1"], line["y2"]), max(line["y1"], line["y2"]) + 1):
