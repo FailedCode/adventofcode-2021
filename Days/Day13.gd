@@ -38,6 +38,32 @@ func calculatePart1() -> String:
 	map = foldMap(map, folds[0])
 	return countPointsOnMap(map)
 
+func calculatePart2() -> String:
+	var tmp = getInput()
+	var map = buidlMap(tmp["points"]) 
+	var folds = tmp["folds"]
+	
+	for fold in folds:
+		map = foldMap(map, fold)
+	
+	#printMap(map)
+	return mapToText(map)
+
+func mapToText(map) -> String:
+	var text = ""
+	var chars = {
+		"####.#....###..#....#....#....": "F",
+		"#..#.#..#.####.#..#.#..#.#..#.": "H",
+		"..##....#....#....#.#..#..##..": "J",
+		"###..#..#.#..#.###..#....#....": "P",
+		"###..#..#.#..#.###..#.#..#..#.": "R",
+		"####....#...#...#...#....####.": "Z",
+	}
+	for i in range(0, 8):
+		var sub = subArray(map, i*5, 0, 5, 6)
+		text += chars[linearTextMap(sub)]
+	return text
+
 func foldMap(map, fold):
 	if fold["dir"] == "x": return foldMapLeft(map, fold["value"])
 	elif fold["dir"] == "y": return foldMapUp(map, fold["value"])
@@ -69,6 +95,17 @@ func copyMap(map, newMap):
 		for x in range(0, newMap[y].size()):
 			newMap[y][x] = map[y][x]
 
+func subArray(map, x, y, width, height):
+	var result = Utility.fill_array2d(width, height)
+	var newY = 0
+	for py in range(y, y+height):
+		var newX = 0
+		for px in range(x, x+width):
+			result[newY][newX] = map[py][px]
+			newX += 1
+		newY += 1
+	return result
+
 func buidlMap(points) -> Array:
 	var minMax = getMinMax(points)
 	var map = Utility.fill_array2d(minMax["maxX"]+1, minMax["maxY"]+1)
@@ -97,3 +134,23 @@ func countPointsOnMap(map):
 			if col > 0:
 				count += 1
 	return count
+
+func printMap(map):
+	for row in map:
+		var line = ""
+		for col in row:
+			if col > 0:
+				line += "#"
+			else:
+				line += "."
+		print(line)
+
+func linearTextMap(map):
+	var text = ""
+	for row in map:
+		for col in row:
+			if col > 0:
+				text += "#"
+			else:
+				text += "."
+	return text
